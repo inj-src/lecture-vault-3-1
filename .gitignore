@@ -1,4 +1,4 @@
-# Audio/video recordings are large — kept locally only
+# Audio/video recordings are large, so they are kept locally only
 *.mp3
 *.m4a
 *.wav
