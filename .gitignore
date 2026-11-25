@@ -1,0 +1,12 @@
+# Audio/video recordings are large — kept locally only
+*.mp3
+*.m4a
+*.wav
+*.ogg
+*.opus
+*.aac
+*.flac
+*.mp4
+*.mkv
+*.webm
+audio/
