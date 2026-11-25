@@ -24,6 +24,7 @@ The audio files themselves are kept locally and are git-ignored because of their
 
 ### CSE 3103: Theory of Computation
 - [TOC - 1](3103%20-%20TOC/TOC%20-%201.md): Intro to ToC (automata, computability, complexity), machine hierarchy, DFA basics
+- [TOC - 2](3103%20-%20TOC/TOC%20-%202.md): Math preliminaries (sets, strings, languages, closures), formal DFA definition, dead states, five worked DFA examples
 
 ### CSE 3105: Computer Interfacing and Embedded Systems
 - [CIES - 1](3105%20-%20CIES/CIES%20-%201.md): Computer interfacing, embedded systems, Arduino vs. STM32, embedded system characteristics
