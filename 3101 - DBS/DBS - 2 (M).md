@@ -1,14 +1,14 @@
 ---
-course: "CSE 3101 – Database Systems (DBS), taught by a different teacher (M) than the other DBS classes"
+course: "CSE 3101: Database Systems (DBS), taught by a different teacher (M) than the other DBS classes"
 class: "DBS - 2 (M)"
 duration: "19:53"
 ---
-# DBS - 2 (M) – Course Overview, Database Design Concepts & Syllabus Roadmap
+# DBS - 2 (M): Course Overview, Database Design Concepts & Syllabus Roadmap
 
 ## Overview
 Subject check: Database Systems
 
-This introductory class—effectively the students' first lecture with this teacher—provides a high-level roadmap of the Database Systems course, explains how the syllabus and labs are split between the two instructors, and introduces the core concepts the teacher will cover starting next class. Rather than diving directly into Chapter 6 (which depends on earlier chapters), the teacher walks through why databases replace file systems, how database design begins with requirement analysis, and previews the major models and topics ahead: Relational Model, ER Diagrams, Normalization, Concurrency Control, Transactions (ACID), and Database Security.
+This introductory class (effectively the students' first lecture with this teacher) provides a high-level roadmap of the Database Systems course, explains how the syllabus and labs are split between the two instructors, and introduces the core concepts the teacher will cover starting next class. Rather than diving directly into Chapter 6 (which depends on earlier chapters), the teacher walks through why databases replace file systems, how database design begins with requirement analysis, and previews the major models and topics ahead: Relational Model, ER Diagrams, Normalization, Concurrency Control, Transactions (ACID), and Database Security.
 
 ## Topic Map
 - Course Structure, Resources & Syllabus Split
@@ -49,7 +49,7 @@ This introductory class—effectively the students' first lecture with this teac
 - **Textbook & Materials:**
   - Primary textbook: *Database System Concepts* by Silberschatz (**7th Edition**).
   - Teaching style generally follows the book's chapter flow and book-based slides, though some topics are taught in the instructors' own way.
-  - **Open Sources:** Students are free to study from any resource (textbook, YouTube lectures, etc.)—reading strictly from the book is not mandatory, as long as the topic sequence is followed.
+  - **Open Sources:** Students are free to study from any resource (textbook, YouTube lectures, etc.); reading strictly from the book is not mandatory, as long as the topic sequence is followed.
 - **Chapter Split:**
   - **Co-teacher's chapters:**
     - **Chapter 1:** Introduction
@@ -125,7 +125,7 @@ After collecting data/requirements, the designer must select an appropriate **mo
 - **Relating Tables via Keys:**
   - Tables are interrelated so queries can span across them.
   - Both `Student` and `Teacher` share a `Department` attribute.
-  - *Query example:* Suppose you want the `ID` and `Name` of students in the CSE department who take a course with teacher `T1`. The `Student` table alone does not contain `T1`'s information—that resides in `Teacher`. Thus, tables must be linked using **keys** (different types of keys will be taught in the Relational Model).
+  - *Query example:* Suppose you want the `ID` and `Name` of students in the CSE department who take a course with teacher `T1`. The `Student` table alone does not contain `T1`'s information; that resides in `Teacher`. Thus, tables must be linked using **keys** (different types of keys will be taught in the Relational Model).
 
 #### B. ER (Entity-Relationship) Diagram
 - Visualizes entities and how they relate to one another.
@@ -169,22 +169,22 @@ flowchart LR
     - User B simultaneously debits **200 Taka** (seeing the stale balance of 1000 in an uncontrolled/file-like system) $\rightarrow 1000 - 200 = 800\text{ Taka}$.
   - **Problem:** The system records the final balance as **800 Taka**, whereas the **true balance must be**:
     $$900 - 200 = 700\text{ Taka}$$
-  - **Solution:** Enforce ordered execution—User A completes its entire transaction first; only after A finishes can User B execute. Concurrency control defines protocols for which user/operation runs first and how concurrent access is synchronized.
+  - **Solution:** Enforce ordered execution: User A completes its entire transaction first; only after A finishes can User B execute. Concurrency control defines protocols for which user/operation runs first and how concurrent access is synchronized.
 
 #### B. Transactions & Failure Handling
 - **Worked Example (ATM Withdrawal Failure):**
   - You go to an ATM booth, insert your card, enter your password/PIN, and enter an amount to withdraw.
   - Suppose your account is **debited**, and immediately afterward the **system fails** (e.g., power outage).
   - Result: Money is deducted from your account, yet you never received the cash. This is an **incomplete transaction**.
-- **Core Rule:** In a database, **partial transactions are forbidden**. A transaction must follow an **all-or-nothing** rule—either it completes **100%**, or it does **not happen at all** (rolled back).
+- **Core Rule:** In a database, **partial transactions are forbidden**. A transaction must follow an **all-or-nothing** rule: either it completes **100%**, or it does **not happen at all** (rolled back).
 - **Topics covered:** Transaction protocols, designing transactions to avoid failure anomalies, and making transactions **serializable**.
 
 #### C. ACID Properties
 To prevent concurrency and failure risks, database transactions maintain the four **ACID** properties:
-- **A** – **Atomicity** (all-or-nothing execution)
-- **C** – **Consistency** (database moves from one valid state to another)
-- **I** – **Isolation** (concurrent transactions do not interfere with each other)
-- **D** – **Durability** (committed changes survive system failures)
+- **A**: **Atomicity** (all-or-nothing execution)
+- **C**: **Consistency** (database moves from one valid state to another)
+- **I**: **Isolation** (concurrent transactions do not interfere with each other)
+- **D**: **Durability** (committed changes survive system failures)
 
 ---
 
@@ -203,7 +203,7 @@ If time remains at the end of the term, the teacher will cover:
     - **C++ / Java** $\rightarrow$ Object-Oriented Programming (OOP) languages
     - **Assembly** $\rightarrow$ Low-level assembly language
     - **SQL** $\rightarrow$ Structured Query Language for interacting with databases
-  - **Capabilities:** Creating databases, creating tables, inserting data, deleting, updating, editing, and querying data—used directly in the lab.
+  - **Capabilities:** Creating databases, creating tables, inserting data, deleting, updating, editing, and querying data, used directly in the lab.
 - **Relational Algebra & Joins** (Chapter 4): Various join operations and relational algebra (interrelated with SQL and the relational model).
 
 ## Exam / Important Points
@@ -221,5 +221,5 @@ If time remains at the end of the term, the teacher will cover:
 ## Open Questions / Unclear Parts
 - **00:00–00:15:** The recording starts mid-sentence as the teacher discusses section scheduling and "7 cycles" (presumably explaining the new multi-teacher split across sections).
 - **01:28–02:15:** Brief pause with background classroom/hallway noise and someone briefly speaking near the door/phone; no lecture content was missed.
-- **15:46:** The teacher lists normal forms as "1st NF, 2nd, 3rd, CNF" — "CNF" is ambiguous in audio and almost certainly refers to **BCNF** (Boyce–Codd Normal Form).
+- **15:46:** The teacher lists normal forms as "1st NF, 2nd, 3rd, CNF"; "CNF" is ambiguous in audio and almost certainly refers to **BCNF** (Boyce–Codd Normal Form).
 - **16:08:** The teacher refers to Transactions & Concurrency Control as **"Chapter 9"**; in Silberschatz 7th Edition, these topics appear in later chapters, so the numbering likely refers to the department syllabus or slide deck numbering.

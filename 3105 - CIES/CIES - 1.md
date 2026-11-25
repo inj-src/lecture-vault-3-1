@@ -1,12 +1,12 @@
 ---
-course: "CSE 3105 – Computer Interfacing and Embedded Systems (CIES)"
+course: "CSE 3105: Computer Interfacing and Embedded Systems (CIES)"
 class: "CIES - 1"
 duration: "32:25"
 ---
-# CIES - 1 – Introduction to Computer Interfacing and Embedded Systems
+# CIES - 1: Introduction to Computer Interfacing and Embedded Systems
 
 ## Overview
-This introductory lecture establishes the core concepts of **Computer Interfacing** and **Embedded Systems**, explaining how embedded microcontrollers differ from general-purpose computers. It also introduces the hardware and software stack for the course—moving from familiar 8-bit Arduino concepts to a 32-bit **STM32** microcontroller—and outlines the three defining characteristics of embedded systems along with a brief comparison against microprocessors and FPGAs.
+This introductory lecture establishes the core concepts of **Computer Interfacing** and **Embedded Systems**, explaining how embedded microcontrollers differ from general-purpose computers. It also introduces the hardware and software stack for the course, moving from familiar 8-bit Arduino concepts to a 32-bit **STM32** microcontroller, and outlines the three defining characteristics of embedded systems along with a brief comparison against microprocessors and FPGAs.
 
 ## Topic Map
 - Course Scope & Logistics
@@ -63,7 +63,7 @@ This introductory lecture establishes the core concepts of **Computer Interfacin
   - **HCI** is a broad category for user-facing interfaces, and **keyboard** and **mouse** are two devices within it.
 
 ### 3. How a Computer Works (8086 Recap)
-- Literally in Bangla, a computer is a *gananajantra* ("গণনযন্ত্র" — calculating machine), but technically it is a **device capable of executing instructions**.
+- Literally in Bangla, a computer is a *gananajantra* ("গণনযন্ত্র", calculating machine), but technically it is a **device capable of executing instructions**.
 - **Instruction flow:**
   1. Instructions are stored in **permanent (secondary) storage**.
   2. They are loaded into **main memory (RAM)** as a program (a set of instructions).
@@ -78,12 +78,12 @@ This introductory lecture establishes the core concepts of **Computer Interfacin
 - **Everyday examples:** Microwave oven, washing machine, smartwatch, rice cooker.
   - **Microwave oven:** You press a few buttons, it heats food for a set time, and automatically turns off.
   - **Rice cooker:** You put rice in and start it without specifying when to stop; it automatically turns off once the rice is cooked.
-    - While a **heat sensor** detects the temperature/state, a sensor can *only sense*—it has no processing power. Inside the appliance, a **processing unit** reads the sensor and decides when to switch off.
+    - While a **heat sensor** detects the temperature/state, a sensor can *only sense*; it has no processing power. Inside the appliance, a **processing unit** reads the sensor and decides when to switch off.
 - **Definition:** An embedded system is a small processing unit/system integrated (**embedded**) inside a larger system as a component of that larger system.
 - **Key Difference from a General-Purpose Computer:**
   - **Personal Computer (PC):** Through interfaces, a user can directly interact with the CPU, modify its behavior, and write/run arbitrary code on it.
   - **Embedded System:** End-users cannot write or run arbitrary programs on the internal CPU. The **manufacturer/designer** pre-programs a fixed set of instructions into the chip, and the user only triggers those predefined behaviors through simple interfaces (e.g., pressing oven buttons or closing the rice cooker lid and flipping a switch).
-- **Perspective in this course:** We will study and build embedded systems from the **manufacturer/designer's perspective**—learning how to program and configure the embedded chip itself.
+- **Perspective in this course:** We will study and build embedded systems from the **manufacturer/designer's perspective**, learning how to program and configure the embedded chip itself.
 
 ### 5. Microcontrollers, Word Size, and Course Hardware (STM32)
 - **Arduino vs. Microcontroller:**
@@ -98,10 +98,10 @@ This introductory lecture establishes the core concepts of **Computer Interfacin
   - Standard **Arduino** (e.g., Uno) is an **8-bit** microcontroller (very low power).
   - Modern PCs use **64-bit** processors.
   - **Effect of larger bit width:** Allows handling larger numbers natively, supports larger instruction sets, and enables packing more data/operations into a single instruction, increasing computational capability and complexity.
-- **Course Chip — STM32:**
+- **Course Chip (STM32):**
   - Instead of Arduino boards, this course uses an **STM32** board/chip.
   - Naming breakdown: **ST / STM** = **STMicroelectronics**, **32** = **32-bit processor**, followed by the series number.
-  - **Bare-metal programming:** Unlike Arduino (where you simply call high-level library functions), STM32 natively works at the **bare-metal** level—nothing is abstracted away, and everything must be configured from the ground up.
+  - **Bare-metal programming:** Unlike Arduino (where you simply call high-level library functions), STM32 natively works at the **bare-metal** level: nothing is abstracted away, and everything must be configured from the ground up.
   - **Pin & Port Structure (preview):**
     - The chip has **48 pins** divided into categories.
     - One category is **GPIO** (**General Purpose Input/Output**), organized into three ports: **Port A**, **Port B**, and **Port C**.
@@ -126,7 +126,7 @@ A motorcycle is a large embedded system composed of many smaller embedded subsys
   - A sensor in the fuel tank tracks the fuel level. Since a sensor cannot process data on its own, it sends readings to a processor, which triggers a low-fuel indicator light/beep when fuel drops below a threshold.
 - **Why Multiple Chips Instead of One?**
   - A complex system like a motorcycle can contain **100 to 1,000+ chips**, each dedicated to a different role.
-  - Microcontroller chips run at much lower clock speeds than PCs—typically around **80 MHz** or **100 MHz** (compared to **3–5 GHz** on a desktop CPU)—and have no active cooling system.
+  - Microcontroller chips run at much lower clock speeds than PCs, typically around **80 MHz** or **100 MHz** (compared to **3–5 GHz** on a desktop CPU), and have no active cooling system.
   - Attempting to run every subsystem (ABS, fuel monitoring, etc.) on a single low-power chip would be too slow and could overheat/damage the chip.
   - Using multiple specialized chips requires **coordination** between them; without proper coordination, failures (such as a crash) can occur.
 
@@ -170,6 +170,6 @@ A motorcycle is a large embedded system composed of many smaller embedded subsys
   - Anyone who gets stuck during installation will be helped in the upcoming lab session.
 
 ## Open Questions / Unclear Parts
-- `00:00–01:40`: Pre-class informal chatter and discussion about earlier courses (e.g., Database) — partially indistinct due to room noise.
+- `00:00–01:40`: Pre-class informal chatter and discussion about earlier courses (e.g., Database), partially indistinct due to room noise.
 - `19:00–19:35`: The teacher holds up the physical STM32 board in class; only "STM32" is stated clearly aloud (exact part/series suffix was shown visually rather than read out).
 - `27:45–28:15`: Brief overlapping classroom chatter during the ABS delay example.

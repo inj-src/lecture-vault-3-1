@@ -1,9 +1,9 @@
 ---
-course: "CSE 3109 – Applied Statistics and Queuing Theory (ASQT)"
+course: "CSE 3109: Applied Statistics and Queuing Theory (ASQT)"
 class: "ASQT - 1"
 duration: "32:02"
 ---
-# ASQT - 1 – Course Introduction & Fundamentals of Statistics
+# ASQT - 1: Course Introduction & Fundamentals of Statistics
 
 ## Overview
 This first lecture of CSE 3109 (Applied Statistics and Queuing Theory) introduces the course syllabus, Course Outcomes (COs) and updated Program Outcomes (POs), and the foundational concepts of statistics. The teacher covers what statistics is, the stages of a statistical study, descriptive vs. inferential statistics, real-world and CS applications, population vs. sample (parameters vs. statistics), and sampling vs. non-sampling errors. This lays the groundwork for the rest of the course, which progresses through statistical measures, probability, probability distributions, hypothesis testing, and queuing theory.
@@ -43,7 +43,7 @@ This first lecture of CSE 3109 (Applied Statistics and Queuing Theory) introduce
   - Major portion: Probability, probability-oriented topics, and probability distributions.
   - Queuing theory (final portion).
 - **Mathematical Prerequisites**:
-  - Probability builds on permutations and combinations (*বিন্যাস ও সমাবেশ* — *binnash o shomabesh*), previously covered in Discrete Mathematics.
+  - Probability builds on permutations and combinations (*বিন্যাস ও সমাবেশ*, *binnash o shomabesh*), previously covered in Discrete Mathematics.
   - Some formulas (such as central tendency measurements) will be derived using integration and differentiation.
 - **Course Outcomes (COs)** (organized by Bloom's taxonomy cognitive levels rather than topic chunks):
   - **CO1 (Apply)**: Introductory concepts; applied (*প্রয়োগমূলক*) questions where known formulas are applied to given data.
@@ -102,7 +102,7 @@ Statistics is divided into two main branches (also referred to as **Descriptive 
 ### 4. Applications of Statistics
 - **General Domains**: Business and industry, engineering, health, government, environmental/weather forecasting, and earthquake prediction.
 - **Real-World Retail Example (Market Research & Data Orientation)**:
-  - Supermarkets and showrooms analyze customer purchasing history/behavior to organize store layouts—placing related items together (e.g., lentils next to rice, fruits next to vegetables, rather than at opposite corners) and reshuffling layouts every 2–3 months based on purchasing patterns.
+  - Supermarkets and showrooms analyze customer purchasing history/behavior to organize store layouts, placing related items together (e.g., lentils next to rice, fruits next to vegetables, rather than at opposite corners) and reshuffling layouts every 2–3 months based on purchasing patterns.
 - **Computer Science & Engineering Applications**:
   - **Performance Evaluation**: Used across CS courses (at minimum, calculating the **mean/average**).
   - **Computer Networks**: Analyzing packet delivery (covered in later semesters).
@@ -121,7 +121,7 @@ Statistics is divided into two main branches (also referred to as **Descriptive 
 - **Sample**:
   - A subset of the population selected using a defined ratio, rate, or sampling frame (e.g., selecting one section of ~50 students out of ~900 CSE department students).
   - The same group can act as a **population** in one context and a **sample** in another depending on the problem definition.
-- **Advantages & Trade-offs of Sampling** *(note: the teacher verbally said "census" when introducing the slide on advantages, but the points discussed—lesser time, lower cost, working with a subset of the population—are the advantages of **sampling** over a census)*:
+- **Advantages & Trade-offs of Sampling** *(note: the teacher verbally said "census" when introducing the slide on advantages, but the points discussed (lesser time, lower cost, working with a subset of the population) are the advantages of **sampling** over a census)*:
   - **Advantages**:
     - Takes less time and lower cost (requires lower computational power/hardware).
     - Produces results with sufficient precision.
@@ -153,17 +153,17 @@ To remain neutral and avoid bias when creating a sample, elements are typically 
 
 1. **Sampling Error**:
    - Occurs simply because only a part of the population is observed rather than the whole population. Even with random selection, observations may accidentally cluster in one subgroup/region.
-   - *Example*: Choosing 5 students at random to estimate a class's average CGPA—if all 5 happen to have >3.9 or <3.0, the sample mean will differ from the true class mean (or the mean CGPA of 30 students differing from all students).
+   - *Example*: Choosing 5 students at random to estimate a class's average CGPA: if all 5 happen to have >3.9 or <3.0, the sample mean will differ from the true class mean (or the mean CGPA of 30 students differing from all students).
    - **Behavior with Sample Size**: Sampling error **decreases as the sample size increases** (covering more of the population). However, unless the entire population is studied, some error/bias cannot be completely eliminated, so critical decisions require caution.
 
 2. **Non-Sampling Errors (Biases)**:
    - **Selection Bias**: Some members of the population cannot be selected or are excluded from coverage (e.g., an online survey misses people without internet access).
-   - **Non-Response Bias**: Those who do not respond differ systematically from those who do (e.g., only satisfied students returning a feedback form—though the teacher noted humorously that among students here, dissatisfied ones often give more feedback).
+   - **Non-Response Bias**: Those who do not respond differ systematically from those who do (e.g., only satisfied students returning a feedback form, though the teacher noted humorously that among students here, dissatisfied ones often give more feedback).
    - **Response Bias**: Answers or measurements are systematically wrong due to flawed timing, collection methods, or procedures.
 
 ## Exam / Important Points
 - **CO-aligned question styles**: Expect CO1 questions to ask for direct formula application to data; CO2 questions to give data/results and ask you to analyze, check fit, or correct them; CO3 questions to present real-world/scenario-based problems requiring full analysis, calculation, and evaluation.
-- **Distinguish Parameter vs. Statistic and their symbols**: Carefully keep population symbols ($N, \mu, \sigma, p$) separate from sample symbols ($n, \bar{x}, s, \hat{p}$)—the teacher explicitly warned not to mix them up.
+- **Distinguish Parameter vs. Statistic and their symbols**: Carefully keep population symbols ($N, \mu, \sigma, p$) separate from sample symbols ($n, \bar{x}, s, \hat{p}$); the teacher explicitly warned not to mix them up.
 - **Population vs. Sample identification**: Be ready to identify the Variable, Population, Sample, Parameter, and Statistic from a short word problem (like the Dean / faculty age example).
 - **Sampling Error vs. Non-Sampling Errors**: Know that sampling error comes from observing only a subset (and decreases as sample size $n$ increases), whereas Selection Bias, Non-Response Bias, and Response Bias are **non-sampling errors**.
 

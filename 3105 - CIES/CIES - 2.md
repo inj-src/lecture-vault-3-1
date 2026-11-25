@@ -1,9 +1,9 @@
 ---
-course: "CSE 3105 – Computer Interfacing and Embedded Systems (CIES)"
+course: "CSE 3105: Computer Interfacing and Embedded Systems (CIES)"
 class: "CIES - 2"
 duration: "39:07"
 ---
-# CIES - 2 – Embedded System Scenarios, Security, Constraints, and Design Process
+# CIES - 2: Embedded System Scenarios, Security, Constraints, and Design Process
 
 ## Overview
 This lecture continues the introductory module of CSE 3105 after covering embedded system characteristics and applications in the previous class. It begins with a recap of why general-purpose processors are favored over task-specific chips, distinguishes between IoT and Cyber-Physical Systems (CPS), and explains edge computing, data security (cryptography), and real-time deadline constraints. The bulk of the lecture walks through the five-step embedded system design process using a Smart Plant Watering System as a worked example, concluding with functional versus non-functional requirements.
@@ -24,7 +24,7 @@ This lecture continues the introductory module of CSE 3105 after covering embedd
   - Desktop speed goal vs. Embedded **Deadlines** (e.g., ABS braking)
   - Hardware limitation (Desktop $3\text{–}5\text{ GHz}$ vs. STM32F103 $72\text{ MHz}$)
   - Dual optimization: Hardware selection + Algorithm efficiency
-- **Embedded System Design Process (5 Steps) — Smart Plant Watering System**
+- **Embedded System Design Process (5 Steps): Smart Plant Watering System**
   1. Requirement Analysis (Customer needs, Requirement Form: Inputs, Functionality, Outputs)
   2. Specification (Ordered technical steps, periodic sensing for energy efficiency)
   3. Architecture (System blueprint, splitting into Hardware & Software flows)
@@ -53,9 +53,9 @@ The teacher introduces two primary deployment scenarios for embedded systems:
 
 2. **Cyber-Physical Systems (CPS)**
    - Complex physical systems integrated with powerful, dedicated embedded computation.
-   - **Example — Airplane**: An airplane contains a very powerful computer. It has numerous parameters and mechanisms (flaps, radar/rudder *(note: likely referring to flight control surfaces like rudder alongside flaps)*, pitch, yaw, etc.) that cannot all be controlled manually by a pilot simultaneously—if the pilot had to manage them manually, the plane could not fly. Most of these are automated: the pilot moves the steering control, and the onboard computer automatically calculates and adjusts which flaps move and by how much.
+   - **Example (Airplane)**: An airplane contains a very powerful computer. It has numerous parameters and mechanisms (flaps, radar/rudder *(note: likely referring to flight control surfaces like rudder alongside flaps)*, pitch, yaw, etc.) that cannot all be controlled manually by a pilot simultaneously; if the pilot had to manage them manually, the plane could not fly. Most of these are automated: the pilot moves the steering control, and the onboard computer automatically calculates and adjusts which flaps move and by how much.
    - Despite being a powerful computer, it is still an **embedded system**, not a general-purpose PC: you cannot use it to play games or watch movies; it is built specifically to fly the plane.
-   - **Example — Vehicles**: Modern cars and automated/autonomous vehicles (e.g., Tesla).
+   - **Example (Vehicles)**: Modern cars and automated/autonomous vehicles (e.g., Tesla).
 
 ### 3. Edge Computing & Data Security (Cryptography)
 - **Need for On-Site (Edge) Computing Power**:
@@ -73,17 +73,17 @@ The teacher introduces two primary deployment scenarios for embedded systems:
     - **Encryption**: Scrambling plaintext using a **key** so it looks like meaningless garbage to outsiders.
     - **Ciphertext**: The scrambled, unreadable output produced by encryption.
     - **Decryption**: Reversing the ciphertext back into plaintext using a key.
-  - **Worked Example — Caesar Cipher**:
+  - **Worked Example (Caesar Cipher)**:
     - Shifts every alphabet character forward by a fixed distance $k$ (the **key**).
     - With key $k = 2$: `A` $\to$ `C` (2 positions after A), `B` $\to$ `D`, etc.
   - **Two Categories of Encryption**:
     1. **Symmetric-Key Cryptography**:
-       - Uses the **same key** for both encryption and decryption (like a physical padlock—the same key locks and unlocks it).
-       - **Example — AES (Advanced Encryption Standard)**: Considered the gold standard of symmetric-key encryption; used almost everywhere (e.g., WhatsApp end-to-end encryption).
+       - Uses the **same key** for both encryption and decryption (like a physical padlock: the same key locks and unlocks it).
+       - **Example (AES (Advanced Encryption Standard))**: Considered the gold standard of symmetric-key encryption; used almost everywhere (e.g., WhatsApp end-to-end encryption).
        - **Why AES is fast**: Its entire operation consists of end-to-end **matrix multiplications**, which can be heavily parallelized. Because AES is so widely used, modern CPUs (in both PCs and smartphones) include dedicated hardware circuits/instructions specifically for AES (analogous to how GPUs are specialized chips for matrix multiplication in machine learning). *(Note: at 15:10 the teacher briefly said "asymmetric" by a slip of the tongue while referring to AES, which he had just defined as symmetric.)*
     2. **Asymmetric-Key Cryptography**:
        - Uses **different keys** for encryption and decryption *(note: in response to a student saying "encrypt with the receiver's private key," the teacher noted this is asymmetric cryptography and deferred the full key-usage explanation to the future Network Security course; standard public-key encryption uses the receiver's public key to encrypt and private key to decrypt)*.
-       - **Example — RSA**: Covered in Discrete Mathematics; relies on large modular exponentiation ("big-mod" / power modulus) operations of the form $P^e \bmod n$.
+       - **Example (RSA)**: Covered in Discrete Mathematics; relies on large modular exponentiation ("big-mod" / power modulus) operations of the form $P^e \bmod n$.
        - **Drawback**: Computationally slower due to heavy modular exponentiation arithmetic.
 
 ### 4. Design Constraints & Challenges: Deadlines and Hardware Limits
@@ -91,13 +91,13 @@ The teacher introduces two primary deployment scenarios for embedded systems:
   - **Desktop / General-Purpose PC**: Programmers aim to minimize time complexity (Big-O notation) and run code as fast as possible ("the faster, the better").
   - **Embedded Systems**: The goal is not "as fast as possible," but meeting a **specific deadline**.
     - Missing the deadline makes **even a mathematically correct output invalid**.
-    - **Example — ABS (Anti-lock Braking System)**: When a biker hits the brake, within a few milliseconds the system must measure wheel speed and apply just the right brake pressure—neither locking the wheel completely nor leaving pressure so low that the wheel keeps spinning at full speed. If the ABS produces the correct answer after 1 minute, it is useless.
+    - **Example (ABS (Anti-lock Braking System))**: When a biker hits the brake, within a few milliseconds the system must measure wheel speed and apply just the right brake pressure, neither locking the wheel completely nor leaving pressure so low that the wheel keeps spinning at full speed. If the ABS produces the correct answer after 1 minute, it is useless.
   - Meeting the **deadline** is the very first requirement to consider before anything else when designing an embedded system.
 - **Hardware Speed Gap**:
   - Embedded microchips have significantly lower processing capability than PCs:
     - Desktop PC clock rate: typically $3\text{–}5\text{ GHz}$.
     - **STM32 F103** (the microcontroller used in this course): clock rate is **$72\text{ MHz}$**.
-  - Because the clock speed is much slower, code that runs quickly on a PC will execute noticeably slower on the STM32. Therefore, code cannot be written casually—it must be optimized.
+  - Because the clock speed is much slower, code that runs quickly on a PC will execute noticeably slower on the STM32. Therefore, code cannot be written casually; it must be optimized.
 - **Two Core Constraints to Balance**:
   1. **Hardware Constraint**: Pick the fastest/best chip feasible for the system.
   2. **Software / Algorithm Constraint**: Design an efficient algorithm so that execution finishes within the deadline on constrained hardware.
@@ -113,13 +113,13 @@ The design workflow is divided into **five sequential steps**:
 The teacher illustrates all five steps using a **Smart Plant Watering System** example:
 
 #### Step 1: Requirement Analysis
-- Captures the **need for the system** from the customer in plain English—without specifying *how* to build it or listing hardware equipment.
-- **Customer request**: *"Design a small device that keeps the soil of a potted plant moist—automatically water it when dry, without letting it overflow."*
+- Captures the **need for the system** from the customer in plain English, without specifying *how* to build it or listing hardware equipment.
+- **Customer request**: *"Design a small device that keeps the soil of a potted plant moist: automatically water it when dry, without letting it overflow."*
 - Additional customer requests may include:
   - A **User Interface (UI)** to check soil humidity percentage (specifically: a text display, two small buttons, and one status LED).
   - A **cost limit** (e.g., do not exceed a certain dollar/taka budget).
   - A **size / physical weight constraint** (must fit right beside the flower pot without needing a separate room or extra space).
-- **Requirement Form**: The designer documents these into a structured Requirement Form. Every system—whether an embedded system, a C function (takes parameters, processes them, returns output), or RUET's education system (students enter as input, RUET processes them, graduates exit as output)—must define **3 mandatory items**:
+- **Requirement Form**: The designer documents these into a structured Requirement Form. Every system, whether an embedded system, a C function (takes parameters, processes them, returns output), or RUET's education system (students enter as input, RUET processes them, graduates exit as output), must define **3 mandatory items**:
   1. **Inputs**
   2. **Functionality** (operations performed)
   3. **Outputs**
@@ -128,7 +128,7 @@ The teacher illustrates all five steps using a **Smart Plant Watering System** e
 #### Step 2: Specification
 - Translates the customer's plain-language requirements into **concrete, ordered technical steps** the designer must implement to satisfy them.
 - **For the Smart Plant Watering System**:
-  - Use a **soil sensor** to monitor soil humidity periodically (e.g., once every **1 minute** instead of continuously, because periodic activation consumes much less power—applying the **energy efficiency** design principle).
+  - Use a **soil sensor** to monitor soil humidity periodically (e.g., once every **1 minute** instead of continuously, because periodic activation consumes much less power, applying the **energy efficiency** design principle).
   - If soil humidity falls below a lower threshold, activate a **water pump** to water the soil.
   - Once soil humidity rises past an upper threshold, turn the pump **off** (preventing overflow).
 
@@ -160,9 +160,9 @@ The teacher illustrates all five steps using a **Smart Plant Watering System** e
 - Combining all developed hardware and software components into a single, complete, tested product ready for the customer.
 
 ### 6. Functional vs. Non-Functional Requirements
-- **Functional Requirements**: Describe **what the system does**—its core operations and behavior (e.g., "a smart plant watering system that waters soil when dry").
-- **Non-Functional Requirements**: Everything **outside** the core functionality—constraints and quality attributes imposed on the design or delivery, such as:
-  - **Cost** (e.g., budget cap of 1,000 BDT—this money doesn't go *into* watering the plant, it constrains how you design it)
+- **Functional Requirements**: Describe **what the system does**: its core operations and behavior (e.g., "a smart plant watering system that waters soil when dry").
+- **Non-Functional Requirements**: Everything **outside** the core functionality: constraints and quality attributes imposed on the design or delivery, such as:
+  - **Cost** (e.g., budget cap of 1,000 BDT; this money doesn't go *into* watering the plant, it constrains how you design it)
   - **Performance**
   - **Physical size / weight** (e.g., compact enough to sit beside the pot)
   - **Project delivery deadline** (e.g., customer requiring delivery within 10 days)
@@ -170,8 +170,8 @@ The teacher illustrates all five steps using a **Smart Plant Watering System** e
 ## Exam / Important Points
 - **General-purpose vs. Specific-purpose**: Be able to explain both cost and flexibility reasons why general-purpose processors are preferred.
 - **IoT vs. Cyber-Physical Systems (CPS)**: Understand the distinction in computing power and use cases (lightweight household IoT devices vs. high-power automated CPS like airplanes and autonomous cars).
-- **Deadlines in Embedded Systems**: Remember that in embedded systems, **meeting the deadline comes first**—a correct result produced past the deadline is **invalid** (know the ABS braking example).
-- **Clock Rate Comparison**: Desktop PCs ($3\text{–}5\text{ GHz}$) vs. **STM32F103** ($72\text{ MHz}$)—know why code optimization is mandatory for embedded targets.
+- **Deadlines in Embedded Systems**: Remember that in embedded systems, **meeting the deadline comes first**: a correct result produced past the deadline is **invalid** (know the ABS braking example).
+- **Clock Rate Comparison**: Desktop PCs ($3\text{–}5\text{ GHz}$) vs. **STM32F103** ($72\text{ MHz}$); know why code optimization is mandatory for embedded targets.
 - **Cryptography Basics**: Know the difference between **symmetric-key** (same key, e.g., **AES**, fast due to parallelizable matrix multiplication & dedicated CPU hardware support) and **asymmetric-key** (different keys, e.g., **RSA**, slower due to modular exponentiation $P^e \bmod n$).
 - **Design Flow (5 Steps)**: Requirement Analysis $\to$ Specification $\to$ Architecture $\to$ Component Design $\to$ System Integration.
 - **Requirement Analysis vs. Specification**: Requirement is the customer's plain-English need; Specification is the designer's technical breakdown/steps to fulfill it.
@@ -188,7 +188,7 @@ The teacher illustrates all five steps using a **Smart Plant Watering System** e
 - No class tests, assignments, or external deadlines announced.
 
 ## Open Questions / Unclear Parts
-- **00:00 – 00:14**: Opening remarks during classroom settling were very quiet/muffled before the recap question began.
-- **02:02 – 02:29**: Teacher referred to a slide that had been edited/removed ("slide 9" or missing slide content), not visible in the audio.
-- **21:30 – 23:25, 28:40 – 29:45, 36:25 – 37:45**: Long silent pauses while students read the lecture slides (e.g., Specification table, Architecture diagram, and end-of-slide sample questions). The specific exact wording of some slide text (such as the full list of sample questions at the end) is only partially read aloud.
-- **37:45 – 39:07**: Attendance roll call at the end of the recording; cuts off mid-roll call around roll 9.
+- **00:00: 00:14**: Opening remarks during classroom settling were very quiet/muffled before the recap question began.
+- **02:02: 02:29**: Teacher referred to a slide that had been edited/removed ("slide 9" or missing slide content), not visible in the audio.
+- **21:30: 23:25, 28:40: 29:45, 36:25: 37:45**: Long silent pauses while students read the lecture slides (e.g., Specification table, Architecture diagram, and end-of-slide sample questions). The specific exact wording of some slide text (such as the full list of sample questions at the end) is only partially read aloud.
+- **37:45: 39:07**: Attendance roll call at the end of the recording; cuts off mid-roll call around roll 9.

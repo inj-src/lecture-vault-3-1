@@ -1,12 +1,12 @@
 ---
-course: "CSE 3103 – Theory of Computation (TOC)"
+course: "CSE 3103: Theory of Computation (TOC)"
 class: "TOC - 1"
 duration: "28:48"
 ---
-# TOC - 1 – Introduction to Theory of Computation, Automata Hierarchy, and DFA Basics
+# TOC - 1: Introduction to Theory of Computation, Automata Hierarchy, and DFA Basics
 
 ## Overview
-This introductory lecture for **CSE 3103 – Theory of Computation (TOC)** introduces the three core pillars of the course—Finite Automata Theory, Computability Theory, and Complexity Theory—and explains why the course is essential for determining what can be physically computed and at what cost. Using compilers, Alan Turing's principle, and search engines as motivating examples, the teacher surveys the hierarchy of computational models and concludes with a worked example of designing a Deterministic Finite Automaton (DFA) for binary strings starting with `01`.
+This introductory lecture for **CSE 3103: Theory of Computation (TOC)** introduces the three core pillars of the course (Finite Automata Theory, Computability Theory, and Complexity Theory) and explains why the course is essential for determining what can be physically computed and at what cost. Using compilers, Alan Turing's principle, and search engines as motivating examples, the teacher surveys the hierarchy of computational models and concludes with a worked example of designing a Deterministic Finite Automaton (DFA) for binary strings starting with `01`.
 
 ## Topic Map
 - Course Scope & Purpose
@@ -30,7 +30,7 @@ This introductory lecture for **CSE 3103 – Theory of Computation (TOC)** intro
 ## Detailed Notes
 
 ### 1. Course Scope and Core Objectives
-The teacher introduced **CSE 3103 – Theory of Computation** around three main pillars that will be studied across the semester:
+The teacher introduced **CSE 3103: Theory of Computation** around three main pillars that will be studied across the semester:
 1. **Finite Automata Theory**
 2. **Computability Theory**
 3. **Complexity Theory** (or Complexity Analysis)
@@ -39,7 +39,7 @@ The teacher introduced **CSE 3103 – Theory of Computation** around three main 
 - Whenever a human thinks of an algorithm or computational idea ("I will do something like this"), it initially exists only in human thought. To bring an idea from thought into physical reality, we must know whether implementation is actually possible.
 - **Role of Theory of Computation:** It measures the **strength and limitations** of any computation.
   - Note: While many human ideas are eventually realized or closely approximated over time, some problems are fundamentally impossible to implement physically.
-  - **Computability Theory** measures whether a problem is actually *computable*—whether real-world machines can recognize/compute it.
+  - **Computability Theory** measures whether a problem is actually *computable*: whether real-world machines can recognize/compute it.
   - **Complexity Theory** measures the *cost* required to bring a computable idea into physical reality.
 
 ### 2. Alan Turing's Principle & Historical Context
@@ -51,7 +51,7 @@ The teacher introduced **CSE 3103 – Theory of Computation** around three main 
 
 ### 3. Connection to Programming Languages & Compilers
 - The teacher asked students to list languages they know: Machine Language, Assembly Language, C, C++, Python, Java, JavaScript, TypeScript, Ruby, Pascal, COBOL, Fortran (setting aside markup languages and web frameworks to focus on programming languages).
-- **How programming languages work:** A language designer conceives syntax rules—for example, in C, `if (...)` takes a condition inside parentheses, and `{ ... }` encapsulates multiple lines (or can be omitted for a single line); `#include` includes header files; `else` and `for` each follow strict rules.
+- **How programming languages work:** A language designer conceives syntax rules; for example, in C, `if (...)` takes a condition inside parentheses, and `{ ... }` encapsulates multiple lines (or can be omitted for a single line); `#include` includes header files; `else` and `for` each follow strict rules.
 - **Recognizing a language:** Programming languages are recognized by a **Compiler** (or, in many cases, an **Interpreter**).
 - If you design a new programming language in your mind, you need an equivalent compiler/interpreter. Theory of Computation determines whether such a language and its rules can be physically implemented.
 - **Link to future coursework:** A later course, *Compiler Design* (which includes a lab), builds directly on these foundations to show how compilers actually construct and parse programming languages.
@@ -60,11 +60,11 @@ The teacher introduced **CSE 3103 – Theory of Computation** around three main 
 The teacher outlined the models covered in the course, noting their relative computational power (from weakest to strongest):
 
 1. **Finite State Machines (Finite Automata Theory):**
-   - **DFA** (Deterministic Finite Automata) — weakest in expressive mechanism (note: all three finite automata models have equal recognition power, though DFA is the most restricted in transition rules).
+   - **DFA** (Deterministic Finite Automata): weakest in expressive mechanism (note: all three finite automata models have equal recognition power, though DFA is the most restricted in transition rules).
    - **NFA** (Non-deterministic Finite Automata)
    - **$\varepsilon$-NFA** (Non-deterministic Finite Automata with $\varepsilon$-transitions)
 2. **Non-Finite State Machines (more powerful):**
-   - **Pushdown Automata (PDA)** — paired with:
+   - **Pushdown Automata (PDA)**: paired with:
      - **Context-Free Grammar (CFG):** Defines the formal grammar rules of a language (how a machine learns/recognizes syntax rules).
      - **Context-Free Language (CFL):** The language generated by a Context-Free Grammar.
      - *(Briefly mentioned: Context-Sensitive Language as another class.)*
@@ -136,7 +136,7 @@ Although formal definitions will be given in later classes, the teacher illustra
 
 ## Exam / Important Points
 - **DFA Rules (must always be checked when designing a DFA):**
-  1. From every state, there must be a defined transition for **every** input symbol in the alphabet (cannot leave an input symbol undefined, e.g., missing `1` from $q_0$ or `0` from $q_1$—use a reject/trap state).
+  1. From every state, there must be a defined transition for **every** input symbol in the alphabet (cannot leave an input symbol undefined, e.g., missing `1` from $q_0$ or `0` from $q_1$; use a reject/trap state).
   2. From any single state, a single input symbol **cannot** go to more than one state (no non-determinism).
 - Know the **5 components** of a DFA (set of input symbols, finite set of states, transition function, start state, set of final states) and how a final state is drawn (double circle).
 - Understand the distinction between **Automaton** (a model/device to illustrate and test a theoretical concept) and **automation** (the teacher explicitly warned that "automata" does *not* mean automation).

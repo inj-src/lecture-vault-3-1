@@ -1,32 +1,32 @@
 ---
-course: "CSE 3107 – Computer Architecture (CA)"
+course: "CSE 3107: Computer Architecture (CA)"
 class: "CA - 2"
 duration: "1:15:23"
 ---
-# CA - 2 – Computer Architecture Foundations: ISA, Microarchitecture, Program Execution Lifecycle, and Transistor-Level Logic
+# CA - 2: Computer Architecture Foundations (ISA, Microarchitecture, Program Execution Lifecycle, Transistor-Level Logic)
 
 ## Overview
-This lecture introduces the core scope of Computer Architecture by distinguishing **Instruction Set Architecture (ISA)** from **Microarchitecture**, and then traces the entire vertical stack of how a high-level program executes on physical hardware—spanning compilation, assembly, machine code encoding, the Von Neumann fetch-decode-execute cycle, logic gates, and semiconductor transistors (BJT, MOSFET, and CMOS). It serves as the conceptual roadmap ("gist") for the whole semester's course, bridging prior knowledge from Analog Electronics and Digital Logic Design to processor design.
+This lecture introduces the core scope of Computer Architecture by distinguishing **Instruction Set Architecture (ISA)** from **Microarchitecture**, and then traces the entire vertical stack of how a high-level program executes on physical hardware, spanning compilation, assembly, machine code encoding, the Von Neumann fetch-decode-execute cycle, logic gates, and semiconductor transistors (BJT, MOSFET, and CMOS). It serves as the conceptual roadmap ("gist") for the whole semester's course, bridging prior knowledge from Analog Electronics and Digital Logic Design to processor design.
 
 ## Topic Map
 - **1. Components of Computer Architecture**
-  - Instruction Set Architecture (ISA) — behavioral definition, register size & count, memory access, instruction size, addressing modes, ISA extensions
-  - Microarchitecture — hardware-level implementation, generational & vendor differences, transistor scaling
+  - Instruction Set Architecture (ISA): behavioral definition, register size & count, memory access, instruction size, addressing modes, ISA extensions
+  - Microarchitecture: hardware-level implementation, generational & vendor differences, transistor scaling
   - Semiconductor Industry & Career Context
 - **2. End-to-End Program Execution Lifecycle**
   - High-Level Language (`int a = 10; a = a + 5; return 0;`)
-  - Compiler Phase — error checking, comment removal, parsing, target-dependent Assembly generation
+  - Compiler Phase: error checking, comment removal, parsing, target-dependent Assembly generation
   - Assembly Language Portability & Evolution (`8086` mother series vs. Core i9, ARM)
-  - Assembler, Linker & Loader — memory dependency resolution, stack preservation, decomposing `MOV` into `XOR` + `ADD`
-  - Machine Code Encoding — Opcode (Addressing Mode + Operator) & Operands in binary (shown in hex)
-  - Von Neumann Execution Cycle — Process creation, RAM loading, Program Counter (PC), Control Unit (CU), ALU, MUX, buses, write-back/I/O
+  - Assembler, Linker & Loader: memory dependency resolution, stack preservation, decomposing `MOV` into `XOR` + `ADD`
+  - Machine Code Encoding: Opcode (Addressing Mode + Operator) & Operands in binary (shown in hex)
+  - Von Neumann Execution Cycle: Process creation, RAM loading, Program Counter (PC), Control Unit (CU), ALU, MUX, buses, write-back/I/O
   - Abstraction Hierarchy (High-Level Code $\rightarrow$ Physics) & Turing Machine Note
 - **3. Transistors, Logic Gates & CMOS**
   - Transistor Roles: Amplifier vs. Switch
-  - BJT-Based Logic Gates — AND, OR, NOT, NOR, and practical voltage thresholds
-  - Limitations of BJT — bipolar carriers, size (~300–400× larger), resistor heat/power dissipation
-  - Field-Effect Transistors (FET / MOSFET) — NMOS vs. PMOS speed and operation
-  - From NMOS-Only to CMOS — eliminating bulky, power-wasting resistors
+  - BJT-Based Logic Gates: AND, OR, NOT, NOR, and practical voltage thresholds
+  - Limitations of BJT: bipolar carriers, size (~300–400× larger), resistor heat/power dissipation
+  - Field-Effect Transistors (FET / MOSFET): NMOS vs. PMOS speed and operation
+  - From NMOS-Only to CMOS: eliminating bulky, power-wasting resistors
 
 ## Detailed Notes
 
@@ -35,7 +35,7 @@ This lecture introduces the core scope of Computer Architecture by distinguishin
 Computer Architecture is defined by two distinct layers:
 
 #### Instruction Set Architecture (ISA)
-- **Definition**: Defines the *behavior* of the computer—how the system behaves and what capabilities it exposes.
+- **Definition**: Defines the *behavior* of the computer: how the system behaves and what capabilities it exposes.
 - **What ISA specifies**:
   - **Register size**: Data width processed or transferred in a single instruction / single clock cycle (e.g., a **32-bit architecture** operates on 32-bit data via ALU or communicates 32 bits over parallel buses in one cycle).
   - **Number of registers**: How many registers exist of that size (e.g., 16 registers of 32 bits each, such as `AX`, `BX`, `CX`, `DX`, `EX`, `SI`, `DI`, etc.). *Size* of a register and *count* of registers are two separate ISA parameters.
@@ -43,7 +43,7 @@ Computer Architecture is defined by two distinct layers:
   - **Instruction (machine code) size**: Bit width of each machine instruction.
   - **Addressing modes**: Which modes are supported and how they are encoded (e.g., Direct, Indirect, Base, Immediate). Supporting $8$ addressing modes requires $3$ bits because $2^3 = 8$.
 - **ISA Extensions**: Existing ISAs can be extended for specific data types or specialized operations. For example, in `8086` assembly, general addition is `ADD`, while an extended instruction like `ADDI` handles immediate addition (and similar extensions exist across architectures like ARM).
-- **Teacher's Analogy**: ISA is like a country's **constitution** (*সংবিধান / মূলনীতি*, e.g., the 1972 constitution)—it sets the fixed foundational rules.
+- **Teacher's Analogy**: ISA is like a country's **constitution** (*সংবিধান / মূলনীতি*, e.g., the 1972 constitution); it sets the fixed foundational rules.
 
 #### Microarchitecture
 - **Definition**: How the ISA is *implemented at the hardware level*.
@@ -54,7 +54,7 @@ Computer Architecture is defined by two distinct layers:
   - **Across vendors**: Intel, AMD, and ARM all have 32-bit ISAs, yet their microarchitectures differ.
   - **Across eras**: A 32-bit processor from 1990 or 2000 vs. 2026 shares the 32-bit ISA concept, yet has a radically different microarchitecture.
   - **Transistor scaling**: The `8086` had roughly a few thousand transistors *(teacher uncertainly recalled ~4,000 / 4,096 / 32,000; note: the Intel 8086 had ~29,000 transistors)*, whereas modern chips pack over **4 billion** transistors. As transistor technology advances, microarchitecture updates continuously while keeping the ISA compatible.
-- **Teacher's Analogy**: If ISA is the constitution, Microarchitecture is how successive governments actually run the country—maintaining, upgrading, or adapting within/around that framework.
+- **Teacher's Analogy**: If ISA is the constitution, Microarchitecture is how successive governments actually run the country, maintaining, upgrading, or adapting within/around that framework.
 
 #### Semiconductor Industry Context
 - Major semiconductor/processor companies highlighted: **Intel, Nvidia, ARM, Qualcomm, AMD, Microchip, Samsung** (noting Samsung also designs/fabricates processors).
@@ -89,7 +89,7 @@ Von Neumann Cycle (PC -> Fetch -> CU Decode -> ALU/MUX Execute -> Register/RAM/I
 - Checks **compile-time errors** (distinct from runtime errors like division by zero):
   - Syntax errors (e.g., missing `;`, missing `return` expression).
   - Type errors (e.g., declaring an `int` variable and assigning a `float`).
-- Ignores **comments**—commented lines never produce machine instructions and therefore never execute.
+- Ignores **comments**: commented lines never produce machine instructions and therefore never execute.
 - Tokenizes identifiers, builds parse/syntax trees, and emits **Assembly Language** tailored to the installed processor's ISA (a compiler inspects the host processor architecture upon installation).
 - **Assembly is Processor-Dependent**:
   - `8086` is Intel's "mother series" (`x86`), so all subsequent Intel processors (Core i5, i7, i9) share the same core assembly family, though newer chips have many *additional* instructions (e.g., dedicated hardware circuits for unsigned multiplication that older chips lacked and had to emulate with repeated additions).
@@ -176,10 +176,10 @@ Two dominant constraints in processor design are **Space** and **Power Dissipati
 - **Why CMOS instead of NMOS-only?**
   - An NMOS-only inverter still requires a **resistor**. A single resistor occupies **at least ~300× more chip area** than a transistor and wastes power as heat.
   - **PMOS** exhibits high impedance and can serve as the pull-up/load impedance in place of a physical resistor.
-  - Pairing **PMOS + NMOS** together eliminates all physical resistors—forming **CMOS (Complementary MOS)**, which drastically saves area and minimizes static power dissipation/heat.
+  - Pairing **PMOS + NMOS** together eliminates all physical resistors, forming **CMOS (Complementary MOS)**, which drastically saves area and minimizes static power dissipation/heat.
 
 ## Exam / Important Points
-- **ISA Definition (Viva & Written Exam Favorite)**: The teacher explicitly warned that **Instruction Set Architecture (ISA)** is repeatedly asked in vivas and exams, yet many students still fail to explain it clearly—memorize what ISA covers (register size & count, memory access, instruction size, addressing modes) vs. Microarchitecture (hardware implementation).
+- **ISA Definition (Viva & Written Exam Favorite)**: The teacher explicitly warned that **Instruction Set Architecture (ISA)** is repeatedly asked in vivas and exams, yet many students still fail to explain it clearly. Memorize what ISA covers (register size & count, memory access, instruction size, addressing modes) vs. Microarchitecture (hardware implementation).
 - **Distinguish Register Size vs. Register Count**: e.g., "32-bit architecture" = 32-bit register/data width per cycle; number of registers = e.g., 16 such registers.
 - **Addressing Modes & Bit Width**: Remember $n$ bits encode $2^n$ items (e.g., 3 bits for 8 addressing modes; 4 bits for 16 registers).
 - **Hardware Reality of `MOV`**: `MOV` has no dedicated circuit; it is decomposed into `XOR AX, AX` (flush) + `ADD AX, val`, and prior register contents must be saved to the stack before overwriting.

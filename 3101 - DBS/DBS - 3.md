@@ -1,9 +1,9 @@
 ---
-course: "CSE 3101 – Database Systems (DBS)"
+course: "CSE 3101: Database Systems (DBS)"
 class: "DBS - 3"
 duration: "41:27"
 ---
-# DBS - 3 – File Processing Drawbacks vs. DBMS, Data Models & Relational Model Basics
+# DBS - 3: File Processing Drawbacks vs. DBMS, Data Models & Relational Model Basics
 
 ## Overview
 This lecture concludes the introductory comparison between traditional File Processing Systems and Database Management Systems (DBMS) from Chapter 1, and transitions into Chapter 2 by introducing Data Models and the Relational Model. Building on the previously covered issues of data redundancy and atomicity, the teacher examines five more problems with file systems (isolation, integrity, security, data accessing, and durability) and then defines the foundational building blocks of a relational database: *Relation*, *Attribute*, and *Tuple*.
@@ -55,7 +55,7 @@ This lecture concludes the introductory comparison between traditional File Proc
 ---
 
 ### 3. Data Integrity Problem
-- **Integrity** (*শুদ্ধতা* — correctness/validity of data) ensures that stored data satisfies domain and structural rules.
+- **Integrity** (*শুদ্ধতা*, correctness/validity of data) ensures that stored data satisfies domain and structural rules.
 - **Worked Example (University Admission Form):**
   - Suppose a new incoming batch (e.g., the `26` batch, admission test in late January) submits student info (name, father's name, mother's name, mobile, email, department) via an online web form instead of paper forms.
   - Without validation, an excited student accidentally enters `"CS"` or `"CSEeee"` in the department text field instead of `"CSE"`.
@@ -67,14 +67,14 @@ This lecture concludes the introductory comparison between traditional File Proc
   - Because `"CS"` / `"CSEeee"` matches no valid department, the student's department and Head cannot be found.
 - **File System vs. DBMS:**
   - In a file system, programmers must anticipate edge cases and write many lines of custom validation code manually whenever new cases arise.
-  - A **DBMS** provides built-in **integrity constraints** that automatically reject operations violating validity rules—often using just short keywords or simple conditions rather than large blocks of code.
+  - A **DBMS** provides built-in **integrity constraints** that automatically reject operations violating validity rules, often using just short keywords or simple conditions rather than large blocks of code.
 
 ---
 
 ### 4. Security Problem (Authorization & Partial Access)
 - File processing systems struggle to enforce **partial access** within a single file (e.g., letting a user view or edit only specific parts of a file while hiding confidential fields).
 - **Worked Examples:**
-  - **Healthcare / Diagnostic Center (e.g., Popular):** A patient's confidential medical history should only be visible to the doctor—not to application programmers, lab/pathology operators, or general staff.
+  - **Healthcare / Diagnostic Center (e.g., Popular):** A patient's confidential medical history should only be visible to the doctor, not to application programmers, lab/pathology operators, or general staff.
   - **University Examination System:** Users and programmers must not be allowed to see confidential records such as which teachers moderated exam questions or who typed them.
 - **File System vs. DBMS:**
   - In a file system, securing data requires predicting all confidentiality boundaries upfront, splitting fields into separate files, and manually coding read vs. edit permissions.
@@ -89,15 +89,15 @@ This lecture concludes the introductory comparison between traditional File Proc
   - *Query 1:* Police (Motihar Thana) want a list of all students in Rajshahi (filtering out non-students, while still including students of any institution such as RMC). In a file system, they must hire/ask the programmer to write filter code over the files.
   - *Query 2:* Further investigation reveals the suspects live in or around Kazla. Police now need that student list filtered by current address (Kazla), requiring another file join (personal info + address/academic files). Again, they must call and pay the programmer!
   - *Query 3:* Further investigation narrows it down to **3rd-year students** living around Kazla. Once again, they have to go back to the programmer!
-  - Because relying on programmers for every new filter is slow and costly, investigators often resort to printing massive call lists/records and highlighting entries manually with markers—unless an extremely general, scalable search interface was built upfront (which is hard to make efficient across all fields).
+  - Because relying on programmers for every new filter is slow and costly, investigators often resort to printing massive call lists/records and highlighting entries manually with markers, unless an extremely general, scalable search interface was built upfront (which is hard to make efficient across all fields).
 - **DBMS Advantage:** A DBMS provides a built-in query interface where users can directly request arbitrary filters and join across multiple tables on the fly without writing custom file-parsing programs each time.
 
 ---
 
 ### 6. Durability Problem
-- **Durability** (*স্থায়িত্ব* — permanence of data) means that once an operation/transaction completes and is committed, its data will not be lost even if the system fails.
+- **Durability** (*স্থায়িত্ব*, permanence of data) means that once an operation/transaction completes and is committed, its data will not be lost even if the system fails.
 - **Worked Example (Semester Result Fire):**
-  - Suppose semester results come out poorly, and students wish the room/server in the Department Head's office holding all results and exam scripts would catch fire and crash—and it actually catches fire, destroying the physical machine and scripts. All data in a local file system is permanently lost.
+  - Suppose semester results come out poorly, and students wish the room/server in the Department Head's office holding all results and exam scripts would catch fire and crash, and it actually catches fire, destroying the physical machine and scripts. All data in a local file system is permanently lost.
   - Even if files are synced to external cloud storage (e.g., Google Drive, Dropbox), file-level sync does not automatically maintain transaction-level state or let you cleanly roll back to an exact prior version.
 - **DBMS Advantage:** Durability is a core built-in property of a DBMS. Even if a crash or failure occurs immediately after data is committed, the DBMS uses automatic backups/logs and recovery mechanisms (covered near the end of the course) to ensure committed data survives.
 
@@ -130,11 +130,11 @@ This lecture concludes the introductory comparison between traditional File Proc
 - **Three Fundamental Terms:**
   1. **Relation** (= **Table**):
      - In relational database terminology, *relation* refers to a **table** (not a personal relationship).
-     - Why "relation"? Because values across a row are mathematically related to one another (অন্বয় / সম্পর্ক)—for example, *3 Idiots* is related to `2009`, `Drama`, and `8.4`; *Hirak Rajar Deshe* is related to `1980`, `Drama`, and `8.7`.
+     - Why "relation"? Because values across a row are mathematically related to one another (অন্বয় / সম্পর্ক); for example, *3 Idiots* is related to `2009`, `Drama`, and `8.4`; *Hirak Rajar Deshe* is related to `1980`, `Drama`, and `8.7`.
   2. **Attribute** (= **Column**):
      - Each column header represents a feature or property of the entity being modeled (e.g., `movie_id`, `movie_name`, `release_year`, `genre`, `imdb_rating`).
   3. **Tuple** (= **Row**):
-     - Each row represents a single complete entity instance—combining all attributes together to uniquely identify and describe one item (since a single attribute like `movie_name` alone may not be unique across different movies).
+     - Each row represents a single complete entity instance, combining all attributes together to uniquely identify and describe one item (since a single attribute like `movie_name` alone may not be unique across different movies).
 
 ## Exam / Important Points
 - **Do not rote-memorize** every Chapter 1 file-system drawback list right now; they will become intuitive naturally as later chapters (constraints, authorization, queries, transactions/durability) are covered.

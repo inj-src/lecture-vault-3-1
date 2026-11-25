@@ -1,9 +1,9 @@
 ---
-course: "CSE 3101 – Database Systems (DBS)"
+course: "CSE 3101: Database Systems (DBS)"
 class: "DBS - 1"
 duration: "41:41"
 ---
-# DBS - 1 – Course Introduction, Purpose of Databases, File Processing Limitations, and Atomicity
+# DBS - 1: Course Introduction, Purpose of Databases, File Processing Limitations, and Atomicity
 
 ## Overview
 This was the opening lecture of **CSE 3101 (Database Systems)**, introducing the course structure, teaching split, and foundational motivation for database systems. The teacher defined what a database is, walked through real-world large-scale use cases, and contrasted modern databases with traditional file processing systems by highlighting **data redundancy**, **data inconsistency**, and **atomicity** failures.
@@ -58,11 +58,11 @@ This was the opening lecture of **CSE 3101 (Database Systems)**, introducing the
   1. **Store data in an organized way.**
   2. **Retrieve (fetch), search, and modify** that data efficiently.
 - **Teacher's Analogy (Messy Student Room):**
-  - If you toss a pen somewhere in an unorganized room (like leaving treasure-hunt clues and then losing the map), you might not need it all year—until right before an exam, when you have to tear the whole room apart to find it. Keeping items in a defined structure/format makes retrieval easy later.
+  - If you toss a pen somewhere in an unorganized room (like leaving treasure-hunt clues and then losing the map), you might not need it all year, until right before an exam, when you have to tear the whole room apart to find it. Keeping items in a defined structure/format makes retrieval easy later.
 
 ### 3. Real-World Applications & Why Scale Matters
 - **Why small academic projects give a false sense of security:**
-  - In student course projects, the student acts as developer, client, requirement writer, tester, and polite data-entry user—usually inserting 10–12 (or at most ~100) clean records just for a demo.
+  - In student course projects, the student acts as developer, client, requirement writer, tester, and polite data-entry user, usually inserting 10–12 (or at most ~100) clean records just for a demo.
   - Real-world systems face rough/unpredictable user input and **massive scale** (millions or billions of records), which is where real data-management problems emerge.
 - **Examples Covered in Class:**
   1. **University (RUET) Records:**
@@ -82,7 +82,7 @@ This was the opening lecture of **CSE 3101 (Database Systems)**, introducing the
   - **How multiple copies arise:**
     - Large software systems are built over a long time by multiple developers/teams creating different files with different formats.
     - *University example:* A student's personal data is collected separately by the Academic Section (*শিক্ষা শাখা*), DSW office (for ID cards), Course Advisor (sometimes re-collected when an advisor or staff role changes), and the CSE department.
-    - *Google Form example:* Submitting a form, forgetting whether you submitted it, and submitting again—creating duplicate rows in the same file.
+    - *Google Form example:* Submitting a form, forgetting whether you submitted it, and submitting again, creating duplicate rows in the same file.
   - **Consequences of Redundancy:**
     1. **Higher Storage Cost:** Wasted space from duplicate data.
     2. **Higher Access Cost:** Searching through e.g. 180 records instead of 60 takes more time and resources.
@@ -94,7 +94,7 @@ This was the opening lecture of **CSE 3101 (Database Systems)**, introducing the
 
 ### 5. Problem 2: Atomicity
 - **Concept & Analogy:**
-  - Derived from **atom**—like in chemistry where molecules break into atoms during reactions and the atom acts as an indivisible unit.
+  - Derived from **atom**, like in chemistry where molecules break into atoms during reactions and the atom acts as an indivisible unit.
   - In data operations, **Atomicity** means **"All or Nothing"**: a logical unit of work (transaction) must either execute **completely** or have **no effect at all**.
 - **Worked Example (Money Transfer: Abul → Bulbul):**
   - Suppose **Abul** (A) has **7,000 taka** at the start of the month, and **Bulbul** (B) asks to borrow **10,000 taka**. After careful thought, Abul decides to transfer **$303$ taka** to Bulbul's account.
@@ -116,12 +116,12 @@ This was the opening lecture of **CSE 3101 (Database Systems)**, introducing the
   - Understanding **how to organize/store data** and the **consequences/trade-offs** of each design choice.
 
 ## Exam / Important Points
-- **Favorite / High-Value Course:** The teacher emphasized that CSE 3101 has outstanding, practical content—one of the best courses in the semester regardless of who teaches it.
+- **Favorite / High-Value Course:** The teacher emphasized that CSE 3101 has outstanding, practical content, one of the best courses in the semester regardless of who teaches it.
 - **Course Code & Title Recall:** Remember `CSE 3101` and the course title for CTs and semester final scripts (students frequently forget the exact course code in exam halls).
 - **Two Major File-System Problems Highlighted Today:**
   1. **Data Redundancy → Data Inconsistency** (inconsistency is a much bigger problem than mere storage or access cost).
-  2. **Atomicity ("All or Nothing")** — crucial for multi-step operations like bank transfers.
-- **Applications Question Note:** Textbook/exam questions asking for "applications of databases" are easy/trivial—just pick any domain (university, banking, railway, telecom) and explain what data is stored and why.
+  2. **Atomicity ("All or Nothing")**: crucial for multi-step operations like bank transfers.
+- **Applications Question Note:** Textbook/exam questions asking for "applications of databases" are easy/trivial; just pick any domain (university, banking, railway, telecom) and explain what data is stored and why.
 
 ## Announcements & Logistics
 - **Course Material Platform:** All course materials (PDFs, slides, resources) will be shared on **CSE Connect** (not Google Classroom, per departmental faculty policy). Students must ensure they are registered on CSE Connect.
@@ -132,5 +132,5 @@ This was the opening lecture of **CSE 3101 (Database Systems)**, introducing the
 - **Attendance:** Taken at the end of the lecture (around `39:40`–`41:41`; the teacher also checked whether any students from other series were present).
 
 ## Open Questions / Unclear Parts
-- `01:55` – `02:15` & `02:45` – `02:55`: Some background student murmurs/laughter when the teacher joked about teaching style and the split with the co-instructor.
-- `39:40` – `41:41`: During the attendance roll call at the end, foreground chatter among nearby students (discussing CSE Connect, app/Android tooling, etc.) partially overlaps with the teacher calling roll numbers in the background.
+- `01:55`: `02:15` & `02:45`: `02:55`: Some background student murmurs/laughter when the teacher joked about teaching style and the split with the co-instructor.
+- `39:40`: `41:41`: During the attendance roll call at the end, foreground chatter among nearby students (discussing CSE Connect, app/Android tooling, etc.) partially overlaps with the teacher calling roll numbers in the background.
