@@ -34,4 +34,4 @@ The audio files themselves are kept locally and are git-ignored because of their
 - [CA - 2](3107%20-%20CA/CA%20-%202.md): ISA vs. microarchitecture, program execution lifecycle, transistors to CMOS logic
 
 ### CSE 3109: Applied Statistics and Queuing Theory
-- [ASQT - 1](3109%20-%20ASQT/ASQT%20-%201.md): Course intro and CO/PO mapping, basics of statistics, population vs. sample, sampling errors
+- [ASQT - 1](3109%20-%20ASQT/ASQT%20-%201.md): Course intro and CO/PO mapping, basics of statistics, population vs. sample, sampling errors 
