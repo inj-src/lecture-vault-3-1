@@ -79,7 +79,7 @@ The teacher introduces two primary deployment scenarios for embedded systems:
   - **Two Categories of Encryption**:
     1. **Symmetric-Key Cryptography**:
        - Uses the **same key** for both encryption and decryption (like a physical padlock: the same key locks and unlocks it).
-       - **Example (AES (Advanced Encryption Standard))**: Considered the gold standard of symmetric-key encryption; used almost everywhere (e.g., WhatsApp end-to-end encryption).
+       - **Example (AES, Advanced Encryption Standard)**: Considered the gold standard of symmetric-key encryption; used almost everywhere (e.g., WhatsApp end-to-end encryption).
        - **Why AES is fast**: Its entire operation consists of end-to-end **matrix multiplications**, which can be heavily parallelized. Because AES is so widely used, modern CPUs (in both PCs and smartphones) include dedicated hardware circuits/instructions specifically for AES (analogous to how GPUs are specialized chips for matrix multiplication in machine learning). *(Note: at 15:10 the teacher briefly said "asymmetric" by a slip of the tongue while referring to AES, which he had just defined as symmetric.)*
     2. **Asymmetric-Key Cryptography**:
        - Uses **different keys** for encryption and decryption *(note: in response to a student saying "encrypt with the receiver's private key," the teacher noted this is asymmetric cryptography and deferred the full key-usage explanation to the future Network Security course; standard public-key encryption uses the receiver's public key to encrypt and private key to decrypt)*.
@@ -91,7 +91,7 @@ The teacher introduces two primary deployment scenarios for embedded systems:
   - **Desktop / General-Purpose PC**: Programmers aim to minimize time complexity (Big-O notation) and run code as fast as possible ("the faster, the better").
   - **Embedded Systems**: The goal is not "as fast as possible," but meeting a **specific deadline**.
     - Missing the deadline makes **even a mathematically correct output invalid**.
-    - **Example (ABS (Anti-lock Braking System))**: When a biker hits the brake, within a few milliseconds the system must measure wheel speed and apply just the right brake pressure, neither locking the wheel completely nor leaving pressure so low that the wheel keeps spinning at full speed. If the ABS produces the correct answer after 1 minute, it is useless.
+    - **Example (ABS, Anti-lock Braking System)**: When a biker hits the brake, within a few milliseconds the system must measure wheel speed and apply just the right brake pressure, neither locking the wheel completely nor leaving pressure so low that the wheel keeps spinning at full speed. If the ABS produces the correct answer after 1 minute, it is useless.
   - Meeting the **deadline** is the very first requirement to consider before anything else when designing an embedded system.
 - **Hardware Speed Gap**:
   - Embedded microchips have significantly lower processing capability than PCs:
