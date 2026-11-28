@@ -3,7 +3,7 @@
 These notes were generated from audio recordings of the lectures. Each one is a topic-by-topic summary of what was taught, not a word-for-word transcript. They were transcribed with Gemini 4 Hydrogen.
 The audio files themselves are kept locally and are git-ignored because of their size.
 
-**Naming:** `<COURSE> - <class no>.md`. A `(M)` suffix means that class was taken by a different teacher, so its content does not follow on from the other classes in the series.
+**Naming:** `<COURSE> - <class no>.md`. A letter suffix such as `(M)` is the first initial of the teacher who took that class, for courses taught by more than one teacher. Those classes follow that teacher's own part of the syllabus.
 
 ## Courses
 
@@ -19,7 +19,7 @@ The audio files themselves are kept locally and are git-ignored because of their
 
 ### CSE 3101: Database Systems
 - [DBS - 1](3101%20-%20DBS/DBS%20-%201.md): Course intro, purpose of databases, file-processing limitations (redundancy, inconsistency, atomicity)
-- [DBS - 2 (M)](3101%20-%20DBS/DBS%20-%202%20(M).md): *(other teacher)* Course roadmap, syllabus split, database design, preview of ER, normalization, transactions (ACID)
+- [DBS - 2 (M)](3101%20-%20DBS/DBS%20-%202%20(M).md): *(teacher M)* Course roadmap, syllabus split, database design, preview of ER, normalization, transactions (ACID)
 - [DBS - 3](3101%20-%20DBS/DBS%20-%203.md): Remaining file-system drawbacks (isolation, integrity, security, access, durability), data models, relational model basics
 
 ### CSE 3103: Theory of Computation
