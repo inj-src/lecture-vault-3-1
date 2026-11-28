@@ -10,3 +10,6 @@
 *.mkv
 *.webm
 audio/
+
+# Local transcription pipeline files (instructions, scratch)
+.pipeline/
