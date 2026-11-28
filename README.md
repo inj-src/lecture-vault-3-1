@@ -36,3 +36,4 @@ The audio files themselves are kept locally and are git-ignored because of their
 
 ### CSE 3109: Applied Statistics and Queuing Theory
 - [ASQT - 1](3109%20-%20ASQT/ASQT%20-%201.md): Course intro and CO/PO mapping, basics of statistics, population vs. sample, sampling errors 
+- [ASQT - 2](3109%20-%20ASQT/ASQT%20-%202.md): Sampling methods, variable types, levels of measurement (nominal, ordinal, interval, ratio), data quality and collection, frequency distributions (class boundaries, Sturges' rule)
